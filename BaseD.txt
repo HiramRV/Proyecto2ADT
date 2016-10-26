@@ -1,0 +1,101 @@
+//Datos pelicula 1
+CREATE (p1:Persona { nombreP: "Rita de Leon"})
+CREATE (pp1:Pelicula { nombre: "V For Vendetta"})
+CREATE (a1:Actor { nombreA: "Natalie Portman"})
+CREATE (a2:Actor { nombreA: "Hugo Weaving"})
+CREATE (a3:Actor { nombreA: "Stephen Rea"})
+CREATE (a4:Actor { nombreA: "John Hurt"})
+CREATE (a5:Actor { nombreA: "Stephen Fry"})
+CREATE (d1:Director { nombreD: "James Mcteigue"})
+CREATE (aa1:Año { fecha: "2006"})
+CREATE (g1:Genero { genero: "Acción"})
+CREATE (g2:Genero { genero: "Ciencia ficción"})
+CREATE (g3:Genero { genero: "Suspenso"})
+CREATE (l1:Lugar { nombreL: "Gran Bretaña"})
+CREATE (s1:Saga { nombreS: "No"})
+
+//Datos pelicula 2
+CREATE (p2:Persona { nombreP: "Carlos Gonzales"})
+CREATE (pp2:Pelicula { nombre: "Tarzan"})
+CREATE (a6:Actor { nombreA: "Tony Goldwyn"})
+CREATE (a7:Actor { nombreA: "Glenn Close"})
+CREATE (a8:Actor { nombreA: "Minnie Driver"})
+CREATE (d2:Director { nombreD: "Kevin Lima"})
+CREATE (d3:Director { nombreD: "Chris Buck"})
+CREATE (aa2:Año { fecha: "1999"})
+CREATE (g4:Genero { genero: "Animación"})
+CREATE (g5:Genero { genero: "Comedia"})
+CREATE (l2:Lugar { nombreL: "Estados  Unidos"})
+
+//Datos pelicula 3
+CREATE (p3:Persona { nombreP: "Andrea Peña"})
+CREATE (pp3:Pelicula { nombre: "Titanic"})
+CREATE (a9:Actor { nombreA: "Leonardo DiCaprio"})
+CREATE (a10:Actor { nombreA: "Kate Winslet"})
+CREATE (a11:Actor { nombreA: "Billy Zane"})
+CREATE (d4:Director { nombreD: "James Cameron"})
+CREATE (aa3:Año { fecha: "1997"})
+CREATE (g6:Genero { genero: "Romance"})
+CREATE (g7:Genero { genero: "Drama"})
+
+//Datos pelicula 4
+CREATE (pp4:Pelicula { nombre: "Piratas del Caribe"})
+CREATE (a12:Actor { nombreA: "Johnny Depp"})
+CREATE (a13:Actor { nombreA: "Orlando Bloom"})
+CREATE (a14:Actor { nombreA: "Keira Knightley"})
+CREATE (d5:Director { nombreD: "Gore Verbinski"})
+CREATE (aa4:Año { fecha: "2003"})
+CREATE (s2:Saga { nombreS: "Si"})
+
+//Datos pelicula 5
+CREATE (p4:Persona { nombreP: "Luisa"})
+CREATE (pp5:Pelicula { nombre: "Bajo la Misma Estrella"})
+CREATE (a15:Actor { nombreA: "Shailene Woodley"})
+CREATE (a16:Actor { nombreA: "Ansel Elgort"})
+CREATE (a17:Actor { nombreA: "Laura Dern"})
+CREATE (d6:Director { nombreD: "Josh Boone"})
+CREATE (aa5:Año { fecha: "2014"})
+
+//Definicion de relaciones 
+Create (p1)-[:Vio]->(pp1), (p2)-[:Vio]->(pp2), (p2)-[:Vio]->(pp3), (p3)-[:Vio]->(pp3)
+Create (pp1)-[:Actor_principal]->(a1), (pp1)-[:Actor_principal]->(a2),(pp1)-[:Actor_principal]->(a3), (pp1)-[:Actor_principal]->(a4),(pp1)-[:Actor_principal]->(a5)
+Create (pp1)-[:Dirigida_por]->(d1)
+Create (pp1)-[:Lanzada_en]->(aa1)
+Create (pp1)-[:Del_genero]->(g1), (pp1)-[:Del_genero]->(g2), (pp1)-[:Del_genero]->(g3)
+Create (pp1)-[:Ocurre_en]->(l1) 
+Create (pp1)-[:Saga_]->(s1) 
+
+Create (pp2)-[:Actor_principal]->(a6),(pp2)-[:Actor_principal]->(a7),(pp2)-[:Actor_principal]->(a8)
+Create (pp2)-[:Dirigida_por]->(d2),(pp2)-[:Dirigida_por]->(d3)
+Create (pp2)-[:Lanzada_en]->(aa2)
+Create (pp2)-[:Del_genero]->(g4), (pp2)-[:Del_genero]->(g5)
+Create (pp2)-[:Ocurre_en]->(l2) 
+Create (pp2)-[:Saga_]->(s1)
+
+Create (pp3)-[:Actor_principal]->(a9), (pp3)-[:Actor_principal]->(a10),(pp3)-[:Actor_principal]->(a11)
+Create (pp3)-[:Dirigida_por]->(d4)
+Create (pp3)-[:Lanzada_en]->(aa3)
+Create (pp3)-[:Del_genero]->(g6), (pp3)-[:Del_genero]->(g7)
+Create (pp3)-[:Ocurre_en]->(l2) 
+Create (pp3)-[:Saga_]->(s1)
+
+Create (p2)-[:Vio]->(pp4)
+Create (pp4)-[:Actor_principal]->(a12), (pp4)-[:Actor_principal]->(a13),(pp4)-[:Actor_principal]->(a14)
+Create (pp4)-[:Dirigida_por]->(d5)
+Create (pp4)-[:Lanzada_en]->(aa4)
+Create (pp4)-[:Del_genero]->(g1)
+Create (pp4)-[:Ocurre_en]->(l1) 
+Create (pp4)-[:Saga_]->(s2)
+
+Create (p4)-[:Vio]->(pp5)
+Create (pp5)-[:Actor_principal]->(a15), (pp5)-[:Actor_principal]->(a16),(pp5)-[:Actor_principal]->(a17)
+Create (pp5)-[:Dirigida_por]->(d6)
+Create (pp5)-[:Lanzada_en]->(aa5)
+Create (pp5)-[:Del_genero]->(g6),(pp5)-[:Del_genero]->(g7)
+Create (pp5)-[:Ocurre_en]->(l1) 
+Create (pp5)-[:Saga_]->(s1)
+
+//operaciones para borrado 
+Match (ee:Persona),(ee1:Pelicula),(ee2:Actor),(ee3:Director),(ee4:Año),(ee5:Genero),(ee6:Lugar),(ee7:Saga)  OPTIONAL MATCH (ee)-[r]-() Delete r;
+Match (ee:Persona),(ee1:Pelicula),(ee2:Actor),(ee3:Director),(ee4:Año),(ee5:Genero),(ee6:Lugar),(ee7:Saga)  OPTIONAL MATCH (ee)-[r]-() Delete ee,ee1,ee2,ee3,ee4,ee5,ee6,ee7;
+Match (ee)  OPTIONAL MATCH (ee)-[r]-() Delete r;
