@@ -1,0 +1,229 @@
+//Base de datos segunda parte
+
+//Búsqueda de datos que ya han sido ingresados
+MATCH (p2:Persona {nombreP: "Carlos González"})
+MATCH (aa2:Año {fecha: "1997"})
+MATCH (g4:Genero {genero: "Ciencia ficción"})
+MATCH (g5:Genero {genero: "Comedia"})
+MATCH (s1:Saga {nombreS: "Si"})
+MATCH (l1:Lugar {nombreL: "Estados Unidos"})
+MATCH (p4:Persona {nombreP: "Luisa"})
+MATCH (g7:Genero {genero: "Animación"})
+MATCH (s2:Saga {nombreS: "No"})
+MATCH (g8:Genero {genero: "Acción"})
+MATCH (d10:Director {nombreD: "Chris Buck"})
+MATCH (g9:Genero {genero: "Drama"})
+MATCH (aa7:Año {fecha: "2014"})
+MATCH (a30:Actor {nombreA: "Shailene Woodley"})
+MATCH (aa10:Año {fecha: "2003"})
+MATCH (p37:Persona {nombreP: "Andrea Peña"})
+MATCH (g10:Genero {genero: "Suspenso"})
+
+//peli 2
+CREATE (pp2:Pelicula { nombre: "Hombres de Negro"})
+CREATE (a8:Actor { nombreA: "Tomny Lee Jones"})
+CREATE (a6:Actor { nombreA: "Will Smith"})
+CREATE (d2:Director { nombreD: "Barry Sonnenfeld"})
+
+//peli 3
+CREATE (p3:Persona { nombreP: "Jessica Echeverría"})
+CREATE (pp3:Pelicula { nombre: "Destino Final"})
+CREATE (a9:Actor { nombreA: "Devon Sawa"})
+CREATE (a10:Actor { nombreA: "Ali Larter"})
+CREATE (a11:Actor { nombreA: "Seann William Scott"})
+CREATE (d4:Director { nombreD: "James Wong"})
+CREATE (aa3:Año { fecha: "2000"})
+CREATE (g6:Genero { genero: "Terror"})
+
+//peli 4
+CREATE (pp4:Pelicula { nombre: "Los Increibles"})
+CREATE (a12:Actor { nombreA: "Craig T. Nelson"})
+CREATE (a13:Actor { nombreA: "Holly Hunter"})
+CREATE (a14:Actor { nombreA: "Samuel L. Jackson"})
+CREATE (d5:Director { nombreD: "Brad Bird"})
+CREATE (aa4:Año { fecha: "2004"})
+
+//peli 5
+CREATE (pp5:Pelicula { nombre: "Hércules"})
+CREATE (a15:Actor { nombreA: "Tate Donovan"})
+CREATE (a16:Actor { nombreA: "Josh Keaton"})
+CREATE (a17:Actor { nombreA: "Roger Bart"})
+CREATE (d6:Director { nombreD: "Ron Clements"})
+CREATE (d7:Director { nombreD: "John Musker"})
+
+//peli 6
+CREATE (p5:Persona { nombreP: "Maria Vanegas"})
+CREATE (p6:Persona { nombreP: "Diego Del Águila"})
+CREATE (p7:Persona { nombreP: "Antonio"})
+CREATE (pp6:Pelicula { nombre: "Toy Story"})
+CREATE (a18:Actor { nombreA: "Tom Hanks"})
+CREATE (a19:Actor { nombreA: "Tim Allen"})
+CREATE (a20:Actor { nombreA: "Don Rickles"})
+CREATE (d8:Director { nombreD: "John Lasseter"})
+CREATE (aa5:Año { fecha: "1995"})
+
+//peli 7
+CREATE (p8:Persona { nombreP: "Paulina Stewart"})
+CREATE (pp7:Pelicula { nombre: "Frozen"})
+CREATE (a21:Actor { nombreA: "Kristen Bell"})
+CREATE (a22:Actor { nombreA: "Idina Menzel"})
+CREATE (a23:Actor { nombreA: "Jonathan Groff"})
+CREATE (d9:Director { nombreD: "Jennifer Lee"})
+CREATE (aa6:Año { fecha: "2013"})
+
+//peli 8
+CREATE (pp8:Pelicula { nombre: "Big Hero 6"})
+CREATE (a24:Actor { nombreA: "Ryan Potter"})
+CREATE (a25:Actor { nombreA: "Scott Adsit"})
+CREATE (a26:Actor { nombreA: "Daniel Henney"})
+CREATE (d11:Director { nombreD: "Don Hall"})
+CREATE (d12:Director { nombreD: "Chris Williams"})
+
+//peli 9
+CREATE (pp9:Pelicula { nombre: "Up"})
+CREATE (a27:Actor { nombreA: "Edward Asner"})
+CREATE (a28:Actor { nombreA: "Christopher Plummer"})
+CREATE (a29:Actor { nombreA: "Jordan Nagai"})
+CREATE (d13:Director { nombreD: "Pete Docter"})
+CREATE (d14:Director { nombreD: "Bob Peterson"})
+CREATE (aa8:Año { fecha: "2009"})
+
+//peli 10
+CREATE (pp10:Pelicula { nombre: "Divergente"})
+CREATE (a31:Actor { nombreA: "Theo James"})
+CREATE (a32:Actor { nombreA: "Ashley Judd"})
+CREATE (d15:Director { nombreD: "Neil Burger"})
+
+//peli 11
+CREATE (p12:Persona { nombreP: "Claudia Alfaro"})
+CREATE (p13:Persona { nombreP: "Gretel Wilhelm"})
+CREATE (pp11:Pelicula { nombre: "Los Juegos del Hambre"})
+CREATE (a33:Actor { nombreA: "Jennifer Lawrence"})
+CREATE (a34:Actor { nombreA: "Josh Hutcherson"})
+CREATE (a35:Actor { nombreA: "Liam Hemsworth"})
+CREATE (d16:Director { nombreD: "Gary Ross"})
+CREATE (aa9:Año { fecha: "2012"})
+
+//peli 12
+CREATE (pp12:Pelicula { nombre: "Buscando a Nemo"})
+CREATE (a36:Actor { nombreA: "Albert Brooks"})
+CREATE (a37:Actor { nombreA: "Ellen DeGeneres"})
+CREATE (a38:Actor { nombreA: "Alexander Gould"})
+CREATE (d17:Director { nombreD: "Andrew Stanton"})
+CREATE (d18:Director { nombreD: " Lee Unkrich"})
+
+//peli 13
+CREATE (pp13:Pelicula { nombre: "Harry Potter"})
+CREATE (a39:Actor { nombreA: "Daniel Radcliffe"})
+CREATE (a40:Actor { nombreA: "Rupert Grint"})
+CREATE (a41:Actor { nombreA: "Emma Watson"})
+CREATE (d19:Director { nombreD: "Chris Columbus"})
+CREATE (d20:Director { nombreD: "Alfonso Cuarón"})
+CREATE (d21:Director { nombreD: "Mike Newell"})
+CREATE (d22:Director { nombreD: "David Yates"})
+CREATE (aa11:Año { fecha: "2001"})
+CREATE (g11:Genero { genero: "Fantasía"})
+CREATE (l2:Lugar { nombreL: "Reino Unido"})
+
+//peli 14
+CREATE (pp14:Pelicula { nombre: "Linterna Verde"})
+CREATE (a42:Actor { nombreA: "Ryan Reynolds"})
+CREATE (a43:Actor { nombreA: "Blake Lively"})
+CREATE (a44:Actor { nombreA: "Mark Strong"})
+CREATE (d23:Director { nombreD: "Martin Campbell"})
+CREATE (aa12:Año { fecha: "2011"})
+
+
+//Definicion de relaciones 
+Create (p2)-[:Vio]->(pp2), (p2)-[:Vio]->(pp4), (p4)-[:Vio]->(pp4), (p4)-[:Vio]->(pp5), (p5)-[:Vio]->(pp6), (p6)-[:Vio]->(pp6), (p7)-[:Vio]->(pp6), (p8)-[:Vio]->(pp7), (p8)-[:Vio]->(pp8), (p8)-[:Vio]->(pp9), (p6)-[:Vio]->(pp9), (p3)-[:Vio]->(pp10), (p12)-[:Vio]->(pp11), (p13)-[:Vio]->(pp11), (p3)-[:Vio]->(pp11), (p8)-[:Vio]->(pp11), (p3)-[:Vio]->(pp3), (p7)-[:Vio]->(pp12), (p13)-[:Vio]->(pp13), (p12)-[:Vio]->(pp13), (p6)-[:Vio]->(pp13), (p37)-[:Vio]->(pp13), (p6)-[:Vio]->(pp14)
+
+Create (pp2)-[:Actor_principal]->(a6),(pp2)-[:Actor_principal]->(a8)
+Create (pp2)-[:Dirigida_por]->(d2)
+Create (pp2)-[:Lanzada_en]->(aa2)
+Create (pp2)-[:Del_genero]->(g4), (pp2)-[:Del_genero]->(g5)
+Create (pp2)-[:Ocurre_en]->(l1) 
+Create (pp2)-[:Saga_]->(s1)
+
+Create (pp3)-[:Actor_principal]->(a9), (pp3)-[:Actor_principal]->(a10),(pp3)-[:Actor_principal]->(a11)
+Create (pp3)-[:Dirigida_por]->(d4)
+Create (pp3)-[:Lanzada_en]->(aa3)
+Create (pp3)-[:Del_genero]->(g6)
+Create (pp3)-[:Ocurre_en]->(l1) 
+Create (pp3)-[:Saga_]->(s1)
+
+Create (pp4)-[:Actor_principal]->(a12), (pp4)-[:Actor_principal]->(a13),(pp4)-[:Actor_principal]->(a14)
+Create (pp4)-[:Dirigida_por]->(d5)
+Create (pp4)-[:Lanzada_en]->(aa4)
+Create (pp4)-[:Del_genero]->(g7), (pp4)-[:Del_genero]->(g5)
+Create (pp4)-[:Ocurre_en]->(l1) 
+Create (pp4)-[:Saga_]->(s2)
+
+Create (pp5)-[:Actor_principal]->(a15), (pp5)-[:Actor_principal]->(a16),(pp5)-[:Actor_principal]->(a17)
+Create (pp5)-[:Dirigida_por]->(d6), (pp5)-[:Dirigida_por]->(d7)
+Create (pp5)-[:Lanzada_en]->(aa2)
+Create (pp5)-[:Del_genero]->(g8),(pp5)-[:Del_genero]->(g7)
+Create (pp5)-[:Ocurre_en]->(l1) 
+Create (pp5)-[:Saga_]->(s2)
+
+Create (pp6)-[:Actor_principal]->(a18), (pp6)-[:Actor_principal]->(a19),(pp6)-[:Actor_principal]->(a20)
+Create (pp6)-[:Dirigida_por]->(d8)
+Create (pp6)-[:Lanzada_en]->(aa5)
+Create (pp6)-[:Del_genero]->(g7), (pp6)-[:Del_genero]->(g8)
+Create (pp6)-[:Ocurre_en]->(l1) 
+Create (pp6)-[:Saga_]->(s1) 
+
+Create (pp7)-[:Actor_principal]->(a21), (pp7)-[:Actor_principal]->(a22),(pp7)-[:Actor_principal]->(a23)
+Create (pp7)-[:Dirigida_por]->(d9), (pp7)-[:Dirigida_por]->(d10)
+Create (pp7)-[:Lanzada_en]->(aa6)
+Create (pp7)-[:Del_genero]->(g7), (pp7)-[:Del_genero]->(g8), (pp7)-[:Del_genero]->(g9)
+Create (pp7)-[:Ocurre_en]->(l1) 
+Create (pp7)-[:Saga_]->(s2) 
+
+Create (pp8)-[:Actor_principal]->(a24), (pp8)-[:Actor_principal]->(a25),(pp8)-[:Actor_principal]->(a26)
+Create (pp8)-[:Dirigida_por]->(d11), (pp8)-[:Dirigida_por]->(d12)
+Create (pp8)-[:Lanzada_en]->(aa7)
+Create (pp8)-[:Del_genero]->(g7)
+Create (pp8)-[:Ocurre_en]->(l1) 
+Create (pp8)-[:Saga_]->(s2)
+
+Create (pp9)-[:Actor_principal]->(a27), (pp9)-[:Actor_principal]->(a28),(pp9)-[:Actor_principal]->(a29)
+Create (pp9)-[:Dirigida_por]->(d13), (pp9)-[:Dirigida_por]->(d14)
+Create (pp9)-[:Lanzada_en]->(aa8)
+Create (pp9)-[:Del_genero]->(g7)
+Create (pp9)-[:Ocurre_en]->(l1) 
+Create (pp9)-[:Saga_]->(s2)
+
+Create (pp10)-[:Actor_principal]->(a30), (pp10)-[:Actor_principal]->(a31),(pp10)-[:Actor_principal]->(a32)
+Create (pp10)-[:Dirigida_por]->(d15)
+Create (pp10)-[:Lanzada_en]->(aa7)
+Create (pp10)-[:Del_genero]->(g4), (pp10)-[:Del_genero]->(g8)
+Create (pp10)-[:Ocurre_en]->(l1) 
+Create (pp10)-[:Saga_]->(s1)
+
+Create (pp11)-[:Actor_principal]->(a33), (pp11)-[:Actor_principal]->(a34),(pp11)-[:Actor_principal]->(a35)
+Create (pp11)-[:Dirigida_por]->(d16)
+Create (pp11)-[:Lanzada_en]->(aa9)
+Create (pp11)-[:Del_genero]->(g4), (pp11)-[:Del_genero]->(g8), (pp11)-[:Del_genero]->(g9)
+Create (pp11)-[:Ocurre_en]->(l1) 
+Create (pp11)-[:Saga_]->(s1)
+
+Create (pp12)-[:Actor_principal]->(a36), (pp12)-[:Actor_principal]->(a37),(pp12)-[:Actor_principal]->(a38)
+Create (pp12)-[:Dirigida_por]->(d17), (pp12)-[:Dirigida_por]->(d18)
+Create (pp12)-[:Lanzada_en]->(aa10)
+Create (pp12)-[:Del_genero]->(g7), (pp12)-[:Del_genero]->(g5)
+Create (pp12)-[:Ocurre_en]->(l1) 
+Create (pp12)-[:Saga_]->(s2)
+
+Create (pp13)-[:Actor_principal]->(a39), (pp13)-[:Actor_principal]->(a40),(pp13)-[:Actor_principal]->(a41)
+Create (pp13)-[:Dirigida_por]->(d19), (pp13)-[:Dirigida_por]->(d20), (pp13)-[:Dirigida_por]->(d21), (pp13)-[:Dirigida_por]->(d22)
+Create (pp13)-[:Lanzada_en]->(aa11)
+Create (pp13)-[:Del_genero]->(g10), (pp13)-[:Del_genero]->(g11), (pp13)-[:Del_genero]->(g4), (pp13)-[:Del_genero]->(g8)
+Create (pp13)-[:Ocurre_en]->(l2) 
+Create (pp13)-[:Saga_]->(s1)
+
+Create (pp14)-[:Actor_principal]->(a42), (pp14)-[:Actor_principal]->(a43),(pp14)-[:Actor_principal]->(a44)
+Create (pp14)-[:Dirigida_por]->(d23)
+Create (pp14)-[:Lanzada_en]->(aa12)
+Create (pp14)-[:Del_genero]->(g8), (pp14)-[:Del_genero]->(g4)
+Create (pp14)-[:Ocurre_en]->(l1) 
+Create (pp14)-[:Saga_]->(s2)
