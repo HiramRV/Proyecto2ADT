@@ -26,21 +26,14 @@ public class Main {
 			System.out.println("Ingrese su nombre de usuario:");
 			String nombre= scan.nextLine();
 			Node usuario= funciones.ingreso(db, nombre);
-			System.out.println("DEBUG1");
 			Vector<Node> pelisVistas= funciones.actualizacionPerfilUsuario(db,usuario);
-			System.out.println("DEBUG2");
 			System.out.println("");
 
 			//recomendación inicial
 			Node pelicula = null;
 			if (funciones.getIndicador()==1)
 			{
-				System.out.println("DEBUG3");
 				pelicula= funciones.recomendacion(db,pelisVistas,pelisId,usuario);
-				System.out.println("DEBUG21");
-				if (pelicula==null)
-					System.out.println("NULL");
-				System.out.println(pelicula.getProperty("nombre"));
 			}
 			if (funciones.getIndicador()==2)
 			{
