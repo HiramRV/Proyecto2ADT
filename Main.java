@@ -16,10 +16,12 @@ public class Main {
 		try (Transaction tx = db.beginTx()) {
 			//creación Scanner
 			Scanner scan= new Scanner(System.in);
+			
+			//bienvenida al programa
 			System.out.println("MOVIEST");
 			System.out.println("");
 			
-			//vectores ids
+			//vector con los Id's de los nodos "Pelicula"
 			Vector<Integer> pelisId= funciones.IdsPeliculas(db);
 			
 			//ingreso
@@ -28,56 +30,63 @@ public class Main {
 			Node usuario= funciones.ingreso(db, nombre);
 			Vector<Node> pelisVistas= funciones.actualizacionPerfilUsuario(db,usuario);
 			System.out.println("");
-
-			//recomendación inicial
-			Node pelicula = null;
-			if (funciones.getIndicador()==1)
-			{
-				pelicula= funciones.recomendacion(db,pelisVistas,pelisId,usuario);
-			}
-			if (funciones.getIndicador()==2)
-			{
-				pelicula= funciones.recomendacionRandom(db, pelisId);
-			}
-			String titulo= (String) pelicula.getProperty("nombre");
-			System.out.println(titulo);
-			System.out.println("");
-			System.out.println("Le gustó la recomendación?(S/N)");
-			String o= scan.nextLine();
-			/*while (o.equals("S")==false||o.equals("N")==false)
-			{
-				System.out.println("Debe ingresar S o N para indicar si le gustó la película (S=sí, N=no)");
-				System.out.println("Le gustó la recomendación?(S/N)");
-				o= scan.nextLine();
-			}*/
-			if (o.equals("S"))
-			{
-				usuario.createRelationshipTo(pelicula, Relaciones.Vio);
-				funciones.actualizacionPerfilUsuario(db, usuario);
-			}
-			if (o.equals("N"))
-			{
-				System.out.println("no le gustó");
-			}
 			
 			int s=0;
 			while(s==0)
 			{
+				//recomendación
+				Node pelicula = null;
+				if (pelisVistas.size()>0)
+				{
+					//es usuario guardado, se realiza recomendacion en base a peliculas vistas
+					pelicula= funciones.recomendacion(db,pelisVistas,pelisId,usuario);
+				}
+				else
+				{
+					//es usuario nuevo o no le ha gustado ninguna película aun, se realiza una recomendación random
+					pelicula= funciones.recomendacionRandom(db, pelisId);
+				}
+				// se muestra la recomendación
+				String titulo= (String) pelicula.getProperty("nombre");
+				System.out.println(titulo);
+				System.out.println("");
+				
+				//se verifica si al usuario le gustó la recomendacion o no
+				System.out.println("Le gustó la recomendación?(S/N)");
+				String opc= scan.nextLine();
+				/*while (opc.equals("S")==false||opc.equals("N")==false)
+				{
+					System.out.println("Debe ingresar S o N para indicar si le gustó la película (S=sí, N=no)");
+					System.out.println("Le gustó la recomendación?(S/N)");
+					o= scan.nextLine();
+				}*/
+				if (opc.equals("S"))
+				{
+					//si le gustó la recomendación se crea la relación entre esa película y el usuario
+					usuario.createRelationshipTo(pelicula, Relaciones.Vio);
+					funciones.actualizacionPerfilUsuario(db, usuario);
+				}
+				if (opc.equals("N"))
+				{
+					//System.out.println("no le gustó");
+				}
+				
+				//pregunta para nueva recomendación
 				System.out.println("Desea que se le recomiende otra película? (S/N)");
 				String op= scan.nextLine();
 				if (op.equals("S"))
 				{
-					pelicula= funciones.recomendacion(db,pelisVistas,pelisId,usuario);
-					String tit= (String) pelicula.getProperty("nombre");
-					System.out.println(tit);
-					System.out.println("");
+					//se continúa en ciclo
 				}
 				else
-					s=1;
+					s=1; //se rompe el ciclo para salir del programa
 			}
+			
+			//mensaje final
 			System.out.println(" ");
 			System.out.println("Gracias por utilizar MOVIEST!!!");
-			scan.close();
-			tx.success();
+			
+			scan.close();//se cierra el scanner
+			tx.success();//se cierra la base de datos
 		}
 	}}
