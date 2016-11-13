@@ -48,13 +48,410 @@ CREATE (aa4:Año { fecha: "2003"})
 CREATE (s2:Saga { nombreS: "Si"})
 
 //Datos pelicula 5
-CREATE (p4:Persona { nombreP: "Luisa"})
+CREATE (p4:Persona { nombreP: "Luisa Pimentel"})
 CREATE (pp5:Pelicula { nombre: "Bajo la Misma Estrella"})
 CREATE (a15:Actor { nombreA: "Shailene Woodley"})
 CREATE (a16:Actor { nombreA: "Ansel Elgort"})
 CREATE (a17:Actor { nombreA: "Laura Dern"})
 CREATE (d6:Director { nombreD: "Josh Boone"})
 CREATE (aa5:Año { fecha: "2014"})
+
+//Datos pelicula 6
+CREATE (pp6:Pelicula { nombre: "Hombres de Negro"})
+CREATE (a18:Actor { nombreA: "Tommy Lee Jones"})
+CREATE (a19:Actor { nombreA: "Will Smith"})
+CREATE (d7:Director { nombreD: "Barry Sonnenfeld"})
+
+//Datos pelicula 7
+CREATE (pp7:Pelicula { nombre: "Los Increibles"})
+CREATE (a20:Actor { nombreA: "Craig T. Nelson"})
+CREATE (a21:Actor { nombreA: "Holly Hunter"})
+CREATE (a22:Actor { nombreA: "Samuel L. Jackson"})
+CREATE (d8:Director { nombreD: "Brad Bird"})
+CREATE (aa6:Año { fecha: "2004"})
+
+//Datos pelicula 8
+CREATE (pp8:Pelicula { nombre: "Hércules"})
+CREATE (a23:Actor { nombreA: "Tate Donocan"})
+CREATE (a24:Actor { nombreA: "Josh Keaton"})
+CREATE (a25:Actor { nombreA: "Roger Bart"})
+CREATE (d9:Director { nombreD: "Ron Clements"})
+CREATE (d10:Director { nombreD: "John Musker"})
+
+//Datos pelicula 9
+CREATE (pp9:Pelicula { nombre: "Toy Story"})
+CREATE (a26:Actor { nombreA: "Tom Hanks"})
+CREATE (a27:Actor { nombreA: "Tim Allen"})
+CREATE (a28:Actor { nombreA: "Don Rickles"})
+CREATE (d11:Director { nombreD: "John Lasseter"})
+CREATE (aa7:Año { fecha: "1995"})
+
+//Datos pelicula 10
+CREATE (pp10:Pelicula { nombre: "Frozen"})
+CREATE (a29:Actor { nombreA: "Kristen Bell"})
+CREATE (a30:Actor { nombreA: "Idina Menzel"})
+CREATE (a31:Actor { nombreA: "Jonathan Groff"})
+CREATE (d12:Director { nombreD: "Chris Buck"})
+CREATE (d13:Director { nombreD: "Jennifer Lee"})
+CREATE (aa8:Año { fecha: "2013"})
+
+CREATE (pp11:Pelicula { nombre: "Big Hero 6"})
+CREATE (pp12:Pelicula { nombre: "Up"})
+CREATE (pp13:Pelicula { nombre: "Divergente"})
+CREATE (pp14:Pelicula { nombre: "Los Juegos del Hambre"})
+CREATE (pp15:Pelicula { nombre: "Destino Final"})
+CREATE (pp16:Pelicula { nombre: "Buscando a Nemo"})
+CREATE (pp17:Pelicula { nombre: "Harry Potter"})
+CREATE (pp18:Pelicula { nombre: "Linterna Verde"})
+CREATE (pp19:Pelicula { nombre: "The Great Gatsby"})
+CREATE (pp20:Pelicula { nombre: "Il Postino"})
+CREATE (pp21:Pelicula { nombre: "La Vida Es Bella"})
+CREATE (pp22:Pelicula { nombre: "La Ladrona De Libros"})
+CREATE (pp23:Pelicula { nombre: "Las Cronicas de Narnia"})
+CREATE (pp24:Pelicula { nombre: "Avatar"})
+CREATE (pp25:Pelicula { nombre: "El Laberinto Del Fauno"})
+CREATE (pp26:Pelicula { nombre: "Rapido y Furioso"})
+CREATE (pp27:Pelicula { nombre: "Contra Reloj"})
+CREATE (pp28:Pelicula { nombre: "Ghost Rider"})
+CREATE (pp29:Pelicula { nombre: "2012"})
+CREATE (pp30:Pelicula { nombre: "El Aprendiz de Brujo"})
+CREATE (pp31:Pelicula { nombre: " La Busqueda"})
+CREATE (pp32:Pelicula { nombre: "Como si fuera la primera vez"})
+CREATE (pp33:Pelicula { nombre: "Un Papa Genial"})
+CREATE (pp34:Pelicula { nombre: "Luna de miel en familia"})
+CREATE (pp35:Pelicula { nombre: "Jack And Jill"})
+CREATE (pp36:Pelicula { nombre: "Sigueme El rollo"})
+CREATE (pp37:Pelicula { nombre: "Os declaro Marido y Marido"})
+CREATE (pp38:Pelicula { nombre: "El Barbero Diabólico"})
+CREATE (pp39:Pelicula { nombre: "Charlie y La Fabrica de Chocolate"})
+CREATE (pp40:Pelicula { nombre: "Eduardo Manostijeras"})
+CREATE (pp41:Pelicula { nombre: "Alicia en el País de las Maravillas"})
+CREATE (pp42:Pelicula { nombre: "Transcendence"})
+CREATE (pp43:Pelicula { nombre: "Scott Pilgrim vs The world"})
+CREATE (pp44:Pelicula { nombre: "Agentes del destino"})
+CREATE (pp45:Pelicula { nombre: "Zombieland"})
+CREATE (pp46:Pelicula { nombre: "Adventureland"})
+CREATE (pp47:Pelicula { nombre: "30 minutos o menos"})
+CREATE (pp48:Pelicula { nombre: "Now You See Me"})
+CREATE (pp49:Pelicula { nombre: "Proyecto X"})
+CREATE (pp50:Pelicula { nombre: "Los Simpson: la película"})
+CREATE (pp51:Pelicula { nombre: "El dictador"})
+
+CREATE (aa9:Año { fecha: "2009"})
+CREATE (aa10:Año { fecha: "2012"})
+CREATE (aa11:Año { fecha: "2000"})
+CREATE (aa12:Año { fecha: "2011"})
+CREATE (aa13:Año { fecha: "1994"})
+CREATE (aa14:Año { fecha: "2005"})
+CREATE (aa15:Año { fecha: "2010"})
+CREATE (aa16:Año { fecha: "2007"})
+CREATE (aa17:Año { fecha: "1990"})
+
+CREATE (g8:Genero { genero: "Terror"})
+CREATE (g9:Genero { genero: "Fantasia"})
+CREATE (g10:Genero { genero: "Novela"})
+CREATE (g11:Genero { genero: "Tragedia"})
+CREATE (g12:Genero { genero: "Comedia Dramática "})
+CREATE (g13:Genero { genero: "Comedia romántica"})
+CREATE (g14:Genero { genero: "Musical"})
+
+CREATE (l3:Lugar { nombreL: "Italia"})
+CREATE (l4:Lugar { nombreL: "Francia"})
+CREATE (l5:Lugar { nombreL: "Alemania"})
+CREATE (l6:Lugar { nombreL: "Japon"})
+
+CREATE (p5:Persona { nombreP: "Gretel Wilhelm"})
+CREATE (p6:Persona { nombreP: "Ma. Elisa Vanegas"})
+CREATE (p7:Persona { nombreP: "Antonio Ixtecoc"})
+CREATE (p8:Persona { nombreP: "Diego del Águila"})
+CREATE (p9:Persona { nombreP: "Paulina Stewart"})
+CREATE (p10:Persona { nombreP: "Jessica Peña"})
+CREATE (p11:Persona { nombreP: "Claudia Alfaro"})
+CREATE (p12:Persona { nombreP: "Gladys De La Roca"})
+CREATE (p13:Persona { nombreP: "Sergio Rojas"})
+CREATE (p14:Persona { nombreP: "Marcel Velasquez"})
+CREATE (p15:Persona { nombreP: "Alejandro Castañeda"})
+CREATE (p16:Persona { nombreP: "David Mollinedo"})
+CREATE (p17:Persona { nombreP: "Juan Luis De La Roca"})
+CREATE (p18:Persona { nombreP: "Pablo Cordon"})
+CREATE (p19:Persona { nombreP: "Roberto Cobar"})
+CREATE (p20:Persona { nombreP: "Jose Carcamo"})
+CREATE (p21:Persona { nombreP: "Monica Lopez"})
+CREATE (p22:Persona { nombreP: "Eduardo De Paz"})
+CREATE (p23:Persona { nombreP: "Alejandro Chinchilla"})
+CREATE (p24:Persona { nombreP: "Javier Morales"})
+CREATE (p25:Persona { nombreP: "Jorge Tezen"})
+CREATE (p26:Persona { nombreP: "Blanca Herrera"})
+CREATE (p27:Persona { nombreP: "Gerson Samayoa"})
+CREATE (p28:Persona { nombreP: "Jorge Suchite"})
+CREATE (p29:Persona { nombreP: "Steven Rubio"})
+CREATE (p30:Persona { nombreP: "Cristian Ramirez"})
+
+CREATE (d14:Director { nombreD: "Don Hall"})
+CREATE (d15:Director { nombreD: "Chris Williams"})
+
+CREATE (d16:Director { nombreD: "Pete Docter"})
+CREATE (d17:Director { nombreD: "Bob Peterson"})
+CREATE (d18:Director { nombreD: "Neil Burger"})
+CREATE (d19:Director { nombreD: "Gary Ross"})
+CREATE (d20:Director { nombreD: "James Wong"})
+
+CREATE (d21:Director { nombreD: "Andrew Stanton"})
+CREATE (d22:Director { nombreD: "Lee Unkrich"})
+
+CREATE (d23:Director { nombreD: "Chris Columbus"})
+CREATE (d24:Director { nombreD: "Alfonso Cuarón"})
+CREATE (d25:Director { nombreD: "Mike Newell"})
+CREATE (d26:Director { nombreD: "David Yates"})
+
+CREATE (d27:Director { nombreD: "Martin Campbell"})
+CREATE (d28:Director { nombreD: "Baz Luhrmann"})
+CREATE (d29:Director { nombreD: "Michael Radford"})
+CREATE (d30:Director { nombreD: "Roberto Benigni"})
+CREATE (d31:Director { nombreD: "Brian Percival"})
+CREATE (d32:Director { nombreD: "Andrew Adamson"})
+CREATE (d33:Director { nombreD: "James Cameron"})
+CREATE (d34:Director { nombreD: "Guillermo Del Toro"})
+CREATE (d35:Director { nombreD: "Justin Lin"})
+CREATE (d36:Director { nombreD: "Simon West"})
+CREATE (d37:Director { nombreD: "Brian Taylor"})
+CREATE (d38:Director { nombreD: "Mark Neveldine"})
+CREATE (d39:Director { nombreD: "Roland Emmerich"})
+CREATE (d40:Director { nombreD: "Jon Turteltaub"})
+CREATE (d41:Director { nombreD: "Peter Segal"})
+CREATE (d42:Director { nombreD: "Dennis Dugan"})
+CREATE (d43:Director { nombreD: "Frank Coraci"})
+CREATE (d44:Director { nombreD: "Tim Burton"})
+CREATE (d45:Director { nombreD: "Wally Pfister"})
+CREATE (d46:Director { nombreD: "Edgar Wright"})
+CREATE (d47:Director { nombreD: "Marc Platt"})
+CREATE (d48:Director { nombreD: "Eric Gitter"})
+CREATE (d49:Director { nombreD: "Nira Park"})
+CREATE (d50:Director { nombreD: "George Nolfi"})
+CREATE (d51:Director { nombreD: "Ruben Fleischer"})
+CREATE (d52:Director { nombreD: "Greg Mottola"})
+CREATE (d53:Director { nombreD: "Louis Leterrier"})
+CREATE (d54:Director { nombreD: "Nima Nourizadeh"})
+CREATE (d55:Director { nombreD: "David Silverman"})
+CREATE (d56:Director { nombreD: "Larry Charles"})
+
+
+//Datos pelicula 11
+CREATE (a32:Actor { nombreA: "Ryan Potter"})
+CREATE (a33:Actor { nombreA: "Scott Adsit"})
+CREATE (a34:Actor { nombreA: "Daniel Henney"})
+
+//Datos pelicula 12
+CREATE (a35:Actor { nombreA: "Edward Asner"})
+CREATE (a36:Actor { nombreA: "Christopher Plummer"})
+CREATE (a37:Actor { nombreA: "Jordan Nagai"})
+
+//Datos pelicula 13
+CREATE (a38:Actor { nombreA: "Shailene Woodley"})
+CREATE (a39:Actor { nombreA: "Theo James"})
+CREATE (a40:Actor { nombreA: "Ashley Judd"})
+
+//Datos pelicula 14
+CREATE (a41:Actor { nombreA: "Jennifer Lawrence"})
+CREATE (a42:Actor { nombreA: "Josh Hutcherson"})
+CREATE (a43:Actor { nombreA: "Liam Hemsworth"})
+
+//Datos pelicula 15
+CREATE (a44:Actor { nombreA: "Devon Sawa"})
+CREATE (a45:Actor { nombreA: "Ali Larter"})
+CREATE (a46:Actor { nombreA: "Seann William Scott"})
+
+//Datos pelicula 16
+CREATE (a47:Actor { nombreA: "Albert Brooks"})
+CREATE (a48:Actor { nombreA: "Ellen DeGeneres"})
+CREATE (a49:Actor { nombreA: "Alexander Gould"})
+
+//Datos pelicula 17
+CREATE (a50:Actor { nombreA: "Daniel Radcliffe"})
+CREATE (a51:Actor { nombreA: "Rupert Grint"})
+CREATE (a52:Actor { nombreA: "Emma Watson"})
+
+//Datos pelicula 18
+CREATE (a53:Actor { nombreA: "Ryan Reynolds"})
+CREATE (a54:Actor { nombreA: "Blake Lively"})
+CREATE (a55:Actor { nombreA: "Mark Strong"})
+
+//Datos pelicula 19
+CREATE (a56:Actor { nombreA: "Leonardo DiCaprio"})
+CREATE (a57:Actor { nombreA: "Tobey Maguire"})
+CREATE (a58:Actor { nombreA: "Amanda Seyfried"})
+
+//Datos pelicula 20
+CREATE (a59:Actor { nombreA: " Philippe Noiret"})
+CREATE (a60:Actor { nombreA: "Massimo Troisi"})
+CREATE (a61:Actor { nombreA: "Maria Grazia Cucinotta"})
+
+//Datos pelicula 21
+CREATE (a62:Actor { nombreA: "Roberto Benigni"})
+CREATE (a63:Actor { nombreA: "Nicoletta Braschi"})
+CREATE (a64:Actor { nombreA: "Giorgio Cantarini"})
+
+//Datos pelicula 22
+CREATE (a65:Actor { nombreA: "Sophie Nélisse"})
+CREATE (a66:Actor { nombreA: "Geoffrey Rush"})
+CREATE (a67:Actor { nombreA: "Emily Watson"})
+CREATE (a68:Actor { nombreA: "Ben Schnetzer"})
+
+//Datos pelicula 23
+CREATE (a69:Actor { nombreA: "Georgie Henley"})
+CREATE (a70:Actor { nombreA: "Skandar Keynes"})
+CREATE (a71:Actor { nombreA: "William Moseley"})
+CREATE (a72:Actor { nombreA: "Anna Popplewell"})
+
+//Datos pelicula 24
+CREATE (a73:Actor { nombreA: "Sam Worthington"})
+CREATE (a74:Actor { nombreA: "Zoe Saldaña"})
+CREATE (a75:Actor { nombreA: "Stephen Lang"})
+CREATE (a76:Actor { nombreA: "Michelle Rodríguez"})
+
+//Datos pelicula 25
+CREATE (a77:Actor { nombreA: "Ivana Baquero"})
+CREATE (a78:Actor { nombreA: "Sergi López"})
+CREATE (a79:Actor { nombreA: "Maribel Verdú"})
+CREATE (a80:Actor { nombreA: "Doug Jones"})
+
+//Datos pelicula 26
+CREATE (a81:Actor { nombreA: "Vin Diesel"})
+CREATE (a82:Actor { nombreA: "Paul Walker"})
+CREATE (a83:Actor { nombreA: "Sung Kong"})
+
+//Datos pelicula 27
+CREATE (a84:Actor { nombreA: "Nicolas Cage"})
+CREATE (a85:Actor { nombreA: "Josh Lucas"})
+CREATE (a86:Actor { nombreA: "Danny Houston"})
+
+//Datos pelicula 28
+CREATE (a87:Actor { nombreA: "Ciarán Hinds"})
+CREATE (a88:Actor { nombreA: "Idris Elba"})
+CREATE (a89:Actor { nombreA: "Fergus Riordan"})
+
+//Datos pelicula 29
+CREATE (a90:Actor { nombreA: "John Cusack"})
+CREATE (a91:Actor { nombreA: "Thandie Newton"})
+CREATE (a92:Actor { nombreA: "Danny Golver"})
+
+//Datos pelicula 30
+CREATE (a93:Actor { nombreA: "Jay Baruchel"})
+CREATE (a94:Actor { nombreA: "Monica Bellucci"})
+CREATE (a95:Actor { nombreA: "Teresa Palmer"})
+
+//Datos pelicula 31
+CREATE (a96:Actor { nombreA: "Diane Kruger"})
+CREATE (a97:Actor { nombreA: "Harvey Keitel"})
+CREATE (a98:Actor { nombreA: "Jon Voight"})
+
+//Datos pelicula 32
+CREATE (a99:Actor { nombreA: "Adam Sandler"})
+CREATE (a100:Actor { nombreA: "Drew Barrymore"})
+CREATE (a101:Actor { nombreA: "Rob Schneider"})
+
+//Datos pelicula 33
+CREATE (a102:Actor { nombreA: "Cole Sprouse"})
+CREATE (a103:Actor { nombreA: "Steve Buscemi"})
+CREATE (a104:Actor { nombreA: "Jon Stewart"})
+
+//Datos pelicula 34
+CREATE (a105:Actor { nombreA: "Terry Crews"})
+
+//Datos pelicula 35
+CREATE (a106:Actor { nombreA: "Katie Holmes"})
+CREATE (a107:Actor { nombreA: "Eugenia Derbez"})
+CREATE (a108:Actor { nombreA: "Santiago Segura"})
+
+//Datos pelicula 36
+CREATE (a109:Actor { nombreA: "Jennifer Aniston"})
+CREATE (a110:Actor { nombreA: "Nicole Kidman"})
+CREATE (a111:Actor { nombreA: "Carol Ann Susi"})
+
+//Datos pelicula 37
+CREATE (a112:Actor { nombreA: "Kevin James"})
+CREATE (a113:Actor { nombreA: "Ving Thamer"})
+CREATE (a114:Actor { nombreA: "Dan Aykroyd"})
+
+//Datos pelicula 38
+CREATE (a115:Actor { nombreA: "Johnny Depp"})
+CREATE (a116:Actor { nombreA: "Alan Rickman"})
+CREATE (a117:Actor { nombreA: "Jayne Wisener"})
+CREATE (a118:Actor { nombreA: "Sacha Baron Cohen"})
+
+//Datos pelicula 39
+CREATE (a119:Actor { nombreA: "James Fox"})
+CREATE (a120:Actor { nombreA: "Missi Pyle"})
+CREATE (a121:Actor { nombreA: "David Kelly"})
+CREATE (a122:Actor { nombreA: "Deep Roy"})
+
+//Datos pelicula 40
+CREATE (a123:Actor { nombreA: "Alan Arkin"})
+CREATE (a124:Actor { nombreA: "Vicent Price"})
+CREATE (a125:Actor { nombreA: "Dianne Wiest"})
+CREATE (a126:Actor { nombreA: "Winona Ryder"})
+
+//Datos pelicula 41
+CREATE (a127:Actor { nombreA: "Anne Hathaway"})
+CREATE (a128:Actor { nombreA: "Mia Wasikowska"})
+CREATE (a129:Actor { nombreA: "Crispin Glover"})
+
+
+//Datos pelicula 42
+CREATE (a130:Actor { nombreA: "Paul Bettany"})
+CREATE (a131:Actor { nombreA: "Kate Mara"})
+CREATE (a132:Actor { nombreA: "Cole Hauser"})
+CREATE (a133:Actor { nombreA: "Morgan Dreeman"})
+
+//Datos pelicula 43
+CREATE (a134:Actor { nombreA: "Michael Cera"})
+CREATE (a135:Actor { nombreA: "Mary-Elizabeth Wintead"})
+CREATE (a136:Actor { nombreA: "Chris Evans"})
+CREATE (a137:Actor { nombreA: "Brie Larson"})
+
+//Datos pelicula 44
+CREATE (a138:Actor { nombreA: "Matt Damon"})
+CREATE (a139:Actor { nombreA: "Emily Blunt"})
+CREATE (a140:Actor { nombreA: "Anthony Mackie"})
+CREATE (a141:Actor { nombreA: "Terence Stamp"})
+
+//Datos pelicula 45
+CREATE (a142:Actor { nombreA: "Woody Harrelson"})
+CREATE (a143:Actor { nombreA: "Jesse Eisenberg"})
+CREATE (a144:Actor { nombreA: "Emma Stone"})
+CREATE (a145:Actor { nombreA: "Bill Murray"})
+
+//Datos pelicula 46
+CREATE (a146:Actor { nombreA: "Kristen Stewart"})
+CREATE (a147:Actor { nombreA: "Ryan Reylonds"})
+
+//Datos pelicula 47
+CREATE (a148:Actor { nombreA: "Danny McBride"})
+CREATE (a149:Actor { nombreA: "Aziz Ansari"})
+CREATE (a150:Actor { nombreA: "Nick Swardson"})
+
+//Datos pelicula 48
+CREATE (a151:Actor { nombreA: "Mark Ruffalo"})
+CREATE (a152:Actor { nombreA: "Isla Fisher"})
+CREATE (a153:Actor { nombreA: "Dave Franco"})
+
+//Datos pelicula 49
+CREATE (a154:Actor { nombreA: "Thomas Mann"})
+CREATE (a155:Actor { nombreA: "Oliver Cooper"})
+CREATE (a156:Actor { nombreA: "Jonathan Daniel Brown"})
+
+//Datos pelicula 50
+CREATE (a157:Actor { nombreA: "Dan Castellenata"})
+CREATE (a158:Actor { nombreA: "Julie Kavner"})
+CREATE (a159:Actor { nombreA: "Nancy Cartwright"})
+CREATE (a160:Actor { nombreA: "Hank Azaria"})
+
+//Datos pelicula 51
+CREATE (a161:Actor { nombreA: "Sacha Baron Cohen"})
+CREATE (a162:Actor { nombreA: "Anna Faris"})
+CREATE (a163:Actor { nombreA: "Ben Kingsley"})
+CREATE (a164:Actor { nombreA: "Jason Mantzoukas"})
+
 
 //Definicion de relaciones 
 Create (p1)-[:Vio]->(pp1), (p2)-[:Vio]->(pp2), (p2)-[:Vio]->(pp3), (p3)-[:Vio]->(pp3)
