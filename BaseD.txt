@@ -547,7 +547,7 @@ Create (pp12)-[:Dirigida_por]->(d16), (pp12)-[:Dirigida_por]->(d17)
 Create (pp12)-[:Lanzada_en]->(aa9)
 Create (pp12)-[:Del_genero]->(g4)
 Create (pp12)-[:Ocurre_en]->(l1) 
-Create (pp12)-[:Saga_]->(s2)
+Create (pp12)-[:Saga_]->(s1)
 
 Create (p10)-[:Vio]->(pp13)
 Create (pp13)-[:Actor_principal]->(a38), (pp13)-[:Actor_principal]->(a39), (pp13)-[:Actor_principal]->(a40)
@@ -555,7 +555,16 @@ Create (pp13)-[:Dirigida_por]->(d18)
 Create (pp13)-[:Lanzada_en]->(aa5)
 Create (pp13)-[:Del_genero]->(g2),(pp13)-[:Del_genero]->(g1)
 Create (pp13)-[:Ocurre_en]->(l1) 
-Create (pp13)-[:Saga_]->(s1)
+Create (pp13)-[:Saga_]->(s2)
+
+Create (p10)-[:Vio]->(pp14), (p9)-[:Vio]->(pp14),(p11)-[:Vio]->(pp14),(p5)-[:Vio]->(pp14)
+Create (pp14)-[:Actor_principal]->(a41), (pp14)-[:Actor_principal]->(a42), (pp14)-[:Actor_principal]->(a43)
+Create (pp14)-[:Dirigida_por]->(d19)
+Create (pp14)-[:Lanzada_en]->(aa10)
+Create (pp14)-[:Del_genero]->(g2), (pp14)-[:Del_genero]->(g1), (pp14)-[:Del_genero]->(g7)
+Create (pp14)-[:Ocurre_en]->(l1) 
+Create (pp14)-[:Saga_]->(s2)
+
 
 //operaciones para borrado 
 Match (ee:Persona),(ee1:Pelicula),(ee2:Actor),(ee3:Director),(ee4:Año),(ee5:Genero),(ee6:Lugar),(ee7:Saga)  OPTIONAL MATCH (ee)-[r]-() Delete r;
