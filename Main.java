@@ -20,7 +20,33 @@ public class Main {
 			//bienvenida al programa
 			System.out.println("MOVIEST");
 			System.out.println("");
+			//menú
+			System.out.println("Seleccione una opción:");
+			System.out.println("1. Solicitar una recomendación");
+			System.out.println("2. Ingresar una película");
+			int op1= scan.nextInt();
+			String basura= scan.nextLine();
+			//modo administrador
+			if(op1==2)
+			{
+				int t=0;
+				while (t==0)
+				{
+					funciones.Agregar(db, scan);
+					//pregunta para nuevo ingreso
+					System.out.println("Desea ingresar otra película? (S/N)");
+					String op= scan.nextLine();
+					if (op.equals("S"))
+					{
+						//se continúa en ciclo
+					}
+					else
+						t=1; //se rompe el ciclo para salir del programa
+				}
+			}
 			
+			//modo usuario
+			if (op1==1){
 			//vector con los Id's de los nodos "Pelicula"
 			Vector<Integer> pelisId= funciones.IdsPeliculas(db);
 			
@@ -81,7 +107,7 @@ public class Main {
 				else
 					s=1; //se rompe el ciclo para salir del programa
 			}
-			
+			}
 			//mensaje final
 			System.out.println(" ");
 			System.out.println("Gracias por utilizar MOVIEST!!!");
