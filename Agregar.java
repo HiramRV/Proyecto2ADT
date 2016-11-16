@@ -10,7 +10,7 @@ public class Agregar {
 
 	public static void main(String[] args) {
 		GraphDatabaseFactory dbFactory = new GraphDatabaseFactory();
-		File file= new File("C:/Users/AndreaMaybell/Documents/AMPE/deberes/Algoritmos y Estructuras de Datos/Proyecto2/Base2");
+		File file= new File("C:/Users/AndreaMaybell/Documents/AMPE/deberes/Algoritmos y Estructuras de Datos/Proyecto2/Base3");
 		GraphDatabaseService db= dbFactory.newEmbeddedDatabase(file);
 		
 		Scanner scan= new Scanner(System.in);

@@ -9,7 +9,7 @@ import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 public class Main {
 	public static void main(String[] args) {
 		GraphDatabaseFactory dbFactory = new GraphDatabaseFactory();
-		File file= new File("C:/Users/AndreaMaybell/Documents/AMPE/deberes/Algoritmos y Estructuras de Datos/Proyecto2/Base2");
+		File file= new File("C:/Users/AndreaMaybell/Documents/AMPE/deberes/Algoritmos y Estructuras de Datos/Proyecto2/BP3");
 		GraphDatabaseService db= dbFactory.newEmbeddedDatabase(file);
 		Funciones funciones= new Funciones();
 		
