@@ -1,6 +1,5 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -19,7 +18,7 @@ import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 
 public class GUI extends JFrame {
-
+	
 	private JPanel contentPane;
 	private JTextField txtUsuario;
 	private JTextField txtRecomendacion;
@@ -29,16 +28,12 @@ public class GUI extends JFrame {
 	private JButton btnotra;
 	private JButton btnComenzar;
 
+	
+	
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		
-		Vector<Integer> pelisId= Funciones.IdsPeliculas(db);
-		GraphDatabaseFactory dbFactory = new GraphDatabaseFactory();
-		File file= new File("C:/Users/AndreaMaybell/Documents/AMPE/deberes/Algoritmos y Estructuras de Datos/Proyecto2/Base2");
-		GraphDatabaseService db= dbFactory.newEmbeddedDatabase(file);
-		Funciones funciones= new Funciones();
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -56,11 +51,7 @@ public class GUI extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI() {
-		
-		Vector<Integer> pelisId= funciones.IdsPeliculas(db);
-		Node usuario= funciones.ingreso(db, nombre);
-		Vector<Node> pelisVistas= funciones.actualizacionPerfilUsuario(db,usuario);
-		
+	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 664, 417);
 		contentPane = new JPanel();
@@ -105,72 +96,120 @@ public class GUI extends JFrame {
 		panel_1.add(txtRecomendacion);
 		txtRecomendacion.setColumns(10);
 		
+		GraphDatabaseFactory dbFactory = new GraphDatabaseFactory();
+		File file= new File("C:/Users/Gladys Herrera/Desktop/UVG/Cuarto semestre/Estructura de Datos/ADTP2/base");
+		GraphDatabaseService db= dbFactory.newEmbeddedDatabase(file);
+        try (Transaction tx = db.beginTx()) {
+		Funciones funciones= new Funciones();
+		String nombre= txtUsuario.getText();
+		Node usuario = funciones.ingreso(db, nombre);
+		Vector<Integer> pelisId= funciones.IdsPeliculas(db);
+		
 		btnComenzar = new JButton("Comenzar");
-		btnComenzar.addActionListener(new MiListener());
+		btnComenzar.setBackground(Color.BLACK);
+		btnComenzar.setForeground(Color.WHITE);
+		btnComenzar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				Node usuario;
+				//se busca usuario por el nombre ingresado, Comenzar
+				usuario= db.findNode(Etiquetas.Persona, "nombreP", nombre);
+				
+				if (usuario==null)
+				{
+					//si no se encontró el usuario, se crea un usuario nuevo
+					usuario= db.createNode();
+					usuario.addLabel(Etiquetas.Persona);
+					usuario.setProperty("nombreP", nombre);
+				}
+				else
+				{
+					//se encontró el usuario
+				}
+			
+			Vector<Node> pelisVistas= funciones.actualizacionPerfilUsuario(db,usuario);	
+				Node pelicula = null;
+				if (pelisVistas.size()>0)
+				{
+					//es usuario guardado, se realiza recomendacion en base a peliculas vistas
+					pelicula= funciones.recomendacion(db,pelisVistas,pelisId,usuario);
+				}
+				else
+				{
+					//es usuario nuevo o no le ha gustado ninguna película aun, se realiza una recomendación random
+					pelicula= funciones.recomendacionRandom(db, pelisId);
+				}	String titulo= (String) pelicula.getProperty("nombre");
+				txtRecomendacion.setText(titulo);
+			
+			}
+		});
 		btnComenzar.setBounds(308, 7, 89, 23);
 		panel_1.add(btnComenzar);
 		
 		JLabel lblleGustoLa = new JLabel("\u00BFLe gusto la recomendacion?");
-		lblleGustoLa.setBounds(10, 103, 161, 14);
+		lblleGustoLa.setBounds(10, 103, 222, 14);
 		panel_1.add(lblleGustoLa);
 		
 		btnSi = new JButton("SI");
-		btnSi.addActionListener(new MiListener());
-		btnSi.setBounds(10, 146, 43, 23);
+		btnSi.setBackground(Color.BLACK);
+		btnSi.setForeground(Color.WHITE);
+		btnSi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Node usuario= funciones.ingreso(db, nombre);
+				Vector<Node> pelisVistas= funciones.actualizacionPerfilUsuario(db,usuario);	
+				Node pelicula = null;
+				pelicula= funciones.recomendacion(db,pelisVistas,pelisId,usuario);
+				String titulo= (String) pelicula.getProperty("nombre");
+				txtRecomendacion.setText(titulo);
+			}
+		});
+		btnSi.setBounds(10, 146, 58, 23);
 		panel_1.add(btnSi);
 		
 		btnNo = new JButton("NO :(");
-		btnNo.addActionListener(new MiListener());
+		btnNo.setBackground(Color.BLACK);
+		btnNo.setForeground(Color.WHITE);
 		btnNo.setBounds(78, 146, 62, 23);
 		panel_1.add(btnNo);
 		
 		JLabel lblotraRecomendacion = new JLabel("\u00BFOtra recomendacion?");
-		lblotraRecomendacion.setBounds(308, 103, 128, 14);
+		lblotraRecomendacion.setBounds(308, 103, 197, 14);
 		panel_1.add(lblotraRecomendacion);
 		
 		btnotra = new JButton("SI");
-		btnotra.addActionListener(new MiListener());
+		btnotra.setBackground(Color.BLACK);
+		btnotra.setForeground(Color.WHITE);
+		btnotra.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nombre= txtUsuario.getText();
+				Node usuario= funciones.ingreso(db, nombre);
+				Vector<Node> pelisVistas= funciones.actualizacionPerfilUsuario(db,usuario);	
+				Node pelicula = null;
+				pelicula= funciones.recomendacion(db,pelisVistas,pelisId,usuario);
+				String titulo= (String) pelicula.getProperty("nombre");
+				txtRecomendacion.setText(titulo);
+			}
+		});
 		btnotra.setBounds(335, 146, 48, 23);
 		panel_1.add(btnotra);
 		
 		btnSalir = new JButton("SALIR ");
-		btnSalir.addActionListener(new MiListener());
-		btnSalir.setBounds(490, 205, 70, 23);
-		panel_1.add(btnSalir);
-		
-	
-	}
-	
-	private class MiListener implements ActionListener{
-		public void actionPerformed(ActionEvent e){
-		
-			if (e.getSource() == btnComenzar){
-				Funciones.ingreso(GraphDatabaseService db,String nombre);
-				String recomendacion = Funciones.recomendacion(db,pelisVistas,pelisId,usuario);
-				txtRecomendacion.setText(recomendacion);
-			}
-			
-			if (e.getSource() == btnSi){
-				usuario.createRelationshipTo(pelicula, Relaciones.Vio);
-				Funciones.actualizacionPerfilUsuario(db, usuario);	
-			}
-			
-			if (e.getSource() == btnNo){	
-				
-			}
-			
-			if (e.getSource() == btnotra){
-				String recomendacion = Funciones.recomendacion(db,pelisVistas,pelisId,usuario);
-				txtRecomendacion.setText(recomendacion);
-			}
-			
-			if (e.getSource() == btnSalir){	
+		btnSalir.setBackground(Color.BLACK);
+		btnSalir.setForeground(Color.WHITE);
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
 				GUIAdios nuevaVentana1 = new GUIAdios();
 				nuevaVentana1.setVisible(true);
-		
 			}
+		});
+		btnSalir.setBounds(490, 205, 98, 23);
+		panel_1.add(btnSalir);
+		
+		tx.success();//se cierra la base de datos
 		}
 	}
+        
 	
 }
 
