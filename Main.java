@@ -9,7 +9,7 @@ import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 public class Main {
 	public static void main(String[] args) {
 		GraphDatabaseFactory dbFactory = new GraphDatabaseFactory();
-		File file= new File("C:/Users/AndreaMaybell/Documents/AMPE/deberes/Algoritmos y Estructuras de Datos/Proyecto2/BP3");
+		File file= new File("C:Users/Jacky Hidalgo/Desktop/UNIVERSIDAD/CUARTO CICLO/ESTRUCTURA DE DATOS/Proyecto2/Fase2/Proyecto2ADT-master/Proyecto2ADT-master/BP3");
 		GraphDatabaseService db= dbFactory.newEmbeddedDatabase(file);
 		Funciones funciones= new Funciones();
 		
@@ -18,9 +18,18 @@ public class Main {
 			Scanner scan= new Scanner(System.in);
 			
 			//bienvenida al programa
-			System.out.println("MOVIEST");
-			System.out.println("");
+			System.out.println("-------------------------------------------------------------------------");
+			System.out.println("-------------------------------------------------------------------------");
+			System.out.println("----MM-------MM--OOOOOOO--V---------V--I--EEEEEEE--SSSSSS--TTTTTTT-------");
+			System.out.println("----M--M---M--M--O-----O---V-------V---I--E--------S----------T----------");
+			System.out.println("----M----M----M--O-----O----V-----V----I--EEEEEE---SSSSSS-----T----------");
+			System.out.println("----M---------M--O-----O-----V---V-----I--E-------------S-----T----------");
+			System.out.println("----M---------M--O-----O------V-V------I--E-------------S-----T----------");
+			System.out.println("----M---------M--OOOOOOO-------V-------I--EEEEEEE--SSSSSS-----T----------");
+			System.out.println("-------------------------------------------------------------------------");
+			System.out.println("-------------------------------------------------------------------------");
 			//menú
+			System.out.println("");
 			System.out.println("Seleccione una opción:");
 			System.out.println("1. Solicitar una recomendación");
 			System.out.println("2. Ingresar una película");
@@ -34,6 +43,7 @@ public class Main {
 				{
 					funciones.Agregar(db, scan);
 					//pregunta para nuevo ingreso
+					System.out.println("---------------------------------------");
 					System.out.println("Desea ingresar otra película? (S/N)");
 					String op= scan.nextLine();
 					if (op.equals("S"))
@@ -51,6 +61,7 @@ public class Main {
 			Vector<Integer> pelisId= funciones.IdsPeliculas(db);
 			
 			//ingreso
+			System.out.println("-------------------------------------------------------------------------");
 			System.out.println("Ingrese su nombre de usuario:");
 			String nombre= scan.nextLine();
 			Node usuario= funciones.ingreso(db, nombre);
@@ -78,6 +89,7 @@ public class Main {
 				System.out.println("");
 				
 				//se verifica si al usuario le gustó la recomendacion o no
+				System.out.println("-------------------------------------------------------------------------");
 				System.out.println("Le gustó la recomendación?(S/N)");
 				String opc= scan.nextLine();
 				/*while (opc.equals("S")==false||opc.equals("N")==false)
@@ -98,6 +110,7 @@ public class Main {
 				}
 				
 				//pregunta para nueva recomendación
+				System.out.println("-------------------------------------------------------------------------");
 				System.out.println("Desea que se le recomiende otra película? (S/N)");
 				String op= scan.nextLine();
 				if (op.equals("S"))
@@ -110,7 +123,15 @@ public class Main {
 			}
 			//mensaje final
 			System.out.println(" ");
-			System.out.println("Gracias por utilizar MOVIEST!!!");
+			System.out.println("-------------------------------------------------------------------------");
+			System.out.println("------------GGGGG--RRRRR--AAAAA--CCCCC--II--AAAAA--SSSSS-----------------");
+			System.out.println("------------G------R---R--A---A--C------II--A---A--S---------------------");
+			System.out.println("------------G-GGG--R-RR---AAAAA--C------II--AAAAA--SSSSS-----------------");
+			System.out.println("------------G---G--R--R---A---A--C------II--A---A------S-----------------");
+			System.out.println("------------GGGGG--R---R--A---A--CCCCC--II--A---A--SSSSS-----------------");
+			System.out.println("-------------------------------------------------------------------------");
+			System.out.println("------------------------POR UTILIZAR MOVIEST-----------------------------");
+			System.out.println("-------------------------------------------------------------------------");
 			
 			scan.close();//se cierra el scanner
 			tx.success();//se cierra la base de datos
