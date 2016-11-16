@@ -212,9 +212,9 @@ public class GUI extends JFrame {
 
              //try (Transaction tx = db.beginTx()) {
 
-             String nombre= txtUsuario.getText();
+            // String nombre= txtUsuario.getText();
 
-             usuario = funciones.ingreso(db, nombre);
+            //usuario = funciones.ingreso(db, nombre);
 
              //pelisId= funciones.IdsPeliculas(db);
 
@@ -228,6 +228,7 @@ public class GUI extends JFrame {
 
                     	try (Transaction tx = db.beginTx()) {
 
+                    	 String nombre = txtUsuario.getText();
                           Node usuario= funciones.ingreso(db, nombre);
 
                           Vector<Integer> pelisId= funciones.IdsPeliculas(db);
@@ -277,6 +278,7 @@ public class GUI extends JFrame {
                     	try (Transaction tx = db.beginTx()) {
                     		
                     	
+                    	  String nombre= txtUsuario.getText();
                     	  Vector<Integer> pelisId= funciones.IdsPeliculas(db);
                     	  
                           Node usuario= funciones.ingreso(db, nombre);
@@ -285,13 +287,18 @@ public class GUI extends JFrame {
                           
                           usuario.createRelationshipTo(pelicula, Relaciones.Vio);
 
-                          Vector<Node> pelisVistas= funciones.actualizacionPerfilUsuario(db,usuario);  
-
-                          pelicula= funciones.recomendacion(db,pelisVistas,pelisId,usuario);
-
+                         /* Vector<Node> pelisVistas= funciones.actualizacionPerfilUsuario(db,usuario);  
+                          if (pelisVistas.size()>0)
+                          {
+                        	  pelicula= funciones.recomendacion(db,pelisVistas,pelisId,usuario);
+                          }
+                          else
+                          {
+                        	  pelicula= funciones.recomendacionRandom(db, pelisId);
+                          }    
                           String titulo= (String) pelicula.getProperty("nombre");
 
-                          txtRecomendacion.setText(titulo);
+                          txtRecomendacion.setText(titulo);*/
 
                           	tx.success();}
                     }
@@ -305,6 +312,19 @@ public class GUI extends JFrame {
             
 
              btnNo = new JButton("NO :(");
+             /*btnNo.addActionListener(new ActionListener() {
+
+                 public void actionPerformed(ActionEvent e) {
+                 	
+                 	try (Transaction tx = db.beginTx()) {
+
+                       //db.findNode(Etiquetas.Pelicula, "nombre", txtRecomendacion.getText()).getId();
+                       
+                       tx.success();}
+
+                 }
+
+          });*/
 
              btnNo.setBounds(78, 146, 62, 23);
 
@@ -337,9 +357,15 @@ public class GUI extends JFrame {
                           Vector<Integer> pelisId= funciones.IdsPeliculas(db);
                           
                           Node pelicula = null;
-
-                          pelicula= funciones.recomendacion(db,pelisVistas,pelisId,usuario);
-
+                         
+                          if (pelisVistas.size()>0)
+                          {
+                        	  pelicula= funciones.recomendacion(db,pelisVistas,pelisId,usuario);
+                          }
+                          else
+                          {
+                        	  pelicula= funciones.recomendacionRandom(db, pelisId);
+                          }    
                           String titulo= (String) pelicula.getProperty("nombre");
 
                           txtRecomendacion.setText(titulo);
